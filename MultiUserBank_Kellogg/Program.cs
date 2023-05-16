@@ -15,7 +15,7 @@ namespace MultiUserBank_Kellogg
 			decimal money;
 			string[] user = { "jlennon", "pmccartney", "gharrison", "rstarr" };
 			string[] pass = { "johnny", "pauly", "georgy", "ringoy" };
-			decimal[] balance = { 1250, 2500, 3000, 1000 };
+			decimal[] balance = { 1250M, 2500M, 3000M, 1000M };
 			string User = string.Empty;
 			string Pass = string.Empty;	
 			string Input = string.Empty;
@@ -31,7 +31,7 @@ namespace MultiUserBank_Kellogg
 				Console.WriteLine("Please enter your password: ");
 				Pass = Console.ReadLine();
 
-				for (int i = 0; i < user.Length - 1; i++)
+				for (int i = 0; i < user.Length; i++)
 				{
 					account.Current = balance[i];
 					if (user[i] == User && pass[i] == Pass)

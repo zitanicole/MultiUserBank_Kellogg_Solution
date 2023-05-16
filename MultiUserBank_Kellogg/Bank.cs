@@ -19,8 +19,26 @@ namespace MultiUserBank_Kellogg
 
 		public decimal Withdraw(decimal amount)
 		{
-		   _balance -= amount;
-			return _current -= amount;		
+			if (_balance > amount && amount <= 500M)
+			{
+				_balance -= amount;
+				return _current -= amount;
+			}
+			else if (_balance > amount && amount > 500M)
+			{
+				_balance -= 500M;	
+				return _current -= 500M;
+			}
+			else if (_balance < amount)
+			{
+				_balance -= _current;
+				return _current -= _current;
+			}
+			else
+			{ 
+				return _current; 
+			}
+	
 		}
 
 		public decimal Current
